@@ -8,7 +8,7 @@
 * @value: Value of the new node
 *
 * Description: Insert a new node to the right of the parent
-*
+* Return: Return pointer to new_node or NULL on fail
 */
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
