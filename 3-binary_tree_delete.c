@@ -6,15 +6,15 @@
 */
 void binary_tree_delete(binary_tree_t *tree)
 {
-    binary_tree_t *fire = tree;
+	binary_tree_t *fire = tree;
 
 	if (!fire)
 		return;
 	if (fire->left)
-        binary_tree_delete(fire->left);
-    if (fire->right)
-    {
-        binary_tree_delete(fire->right);
-    }
-    free(fire);
+		binary_tree_delete(fire->left);
+	if (fire->right)
+	{
+		binary_tree_delete(fire->right);
+	}
+	free(fire);
 }
