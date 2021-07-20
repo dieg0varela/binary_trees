@@ -8,12 +8,17 @@
  */
 void tree_height(const binary_tree_t *tree, size_t level, size_t *height)
 {
-	if (level > *height)
+	if(tree == NULL)
+		return;
+	else
 	{
-		*height = *height + 1;
+		if (level > *height)
+		{
+			*height = *height + 1;
+		}
+		tree_height(tree->left, level + 1, height);
+		tree_height(tree->right, level + 1, height);
 	}
-	tree_height(tree->left, level + 1, height);
-	tree_height(tree->right, level + 1, height);
 }
 
 /**
