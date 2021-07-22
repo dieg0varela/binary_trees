@@ -21,7 +21,7 @@ void tree_height(const binary_tree_t *tree, int level, int *height)
 }
 
 /**
- * binary_tree_height - func. that gets the height of the tree
+ * bin_tree_height - func. that gets the height of the tree
  * @tree: Pointer to the tree
  * Return: the height of the tree
  */
