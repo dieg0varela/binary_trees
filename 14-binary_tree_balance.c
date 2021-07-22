@@ -7,13 +7,13 @@
  */
 int binary_tree_balance(const binary_tree_t *tree)
 {
-	size_t izq = 0;
-	size_t der = 0;
+	int izq = 0;
+	int der = 0;
 
 	if (tree == NULL)
 		return (0);
-	izq = binary_tree_height(tree->left);
-	der = binary_tree_height(tree->right);
+	izq = (int)binary_tree_height(tree->left);
+	der = (int)binary_tree_height(tree->right);
 	return (izq - der);
 
 }
