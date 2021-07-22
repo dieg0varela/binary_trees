@@ -27,11 +27,13 @@ void tree_height(const binary_tree_t *tree, size_t level, size_t *height)
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t pichu = 0;
+	size_t pichu = 1;
 
 	if (tree == NULL)
 		return (0);
-	tree_height(tree, 1, &pichu);
+	if ((!tree->left) && (!tree->right))
+		return (0);
+	tree_height(tree, 0, &pichu);
 
 	return (pichu);
 }
