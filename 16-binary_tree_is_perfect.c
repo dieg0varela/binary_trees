@@ -1,7 +1,16 @@
 #include "binary_trees.h"
-#include "math.h"
 #include "9-binary_tree_height.c"
 #include "11-binary_tree_size.c"
+
+int power(int value, int times)
+{
+	int res = 1;
+	int pichu = 0;
+
+	for(pichu = 0 ; pichu < times ; pichu++)
+		res = res * value;
+	return (res);
+}
 /**
  * binary_tree_is_perfect - Entry point
  * @tree:Point to the tree
@@ -16,7 +25,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (0);
 	height = binary_tree_height(tree) + 1;
 	size = binary_tree_size(tree);
-	if (pow(2, height) == size + 1)
+	if (power(2, height) == size + 1)
 		return (1);
 	return (0);
 
