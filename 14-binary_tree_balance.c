@@ -27,11 +27,11 @@ void tree_height(const binary_tree_t *tree, int level, int *height)
  */
 int bin_tree_height(const binary_tree_t *tree)
 {
-	int pichu = 1;
+	int pichu = 0;
 
 	if (tree == NULL)
 		return (0);
-	tree_height(tree, 0, &pichu);
+	tree_height(tree, 1, &pichu);
 
 	return (pichu);
 }
@@ -46,8 +46,6 @@ int binary_tree_balance(const binary_tree_t *tree)
 	int der = 0;
 
 	if (!tree)
-		return (0);
-	if (!(tree->left) && !(tree->right))
 		return (0);
 
 	izq = bin_tree_height(tree->left);
