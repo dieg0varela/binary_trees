@@ -1,31 +1,37 @@
 #include "binary_trees.h"
-
 /**
- * binary_tree_is_leaf - checks if a node is a leaf.
- * @node: pointer to the node to check.
- * Return: 1 if node is a leaf, otherwise 0.
+ * tree_height - func. that gets the height of the tree
+ * @tree: Pointer to the tree
+ * @level: level of the tree
+ * @height: Pointer to height integer
+ * Return: the height of the tree
  */
-int binary_tree_is_leaf(const binary_tree_t *node)
+void tree_height(const binary_tree_t *tree, size_t level, size_t *height)
 {
-	if (node && !node->left && !node->right)
-		return (1);
-	return (0);
+	if (tree == NULL)
+		return;
+
+	if (level > *height)
+	{
+		*height = *height + 1;
+	}
+	tree_height(tree->left, level + 1, height);
+	tree_height(tree->right, level + 1, height);
+
 }
 
 /**
- * binary_tree_height - measures the height of a binary tree.
- * @tree: pointer to the root node of the tree to measure the height.
- * Return: height of the tree, if tree is NULL, returns 0.
+ * binary_tree_height - func. that gets the height of the tree
+ * @tree: Pointer to the tree
+ * Return: the height of the tree
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t right_height, left_height;
+	size_t pichu = 0;
 
-	if (!tree || binary_tree_is_leaf(tree))
+	if (tree == NULL)
 		return (0);
-	right_height = binary_tree_height(tree->right);
-	left_height = binary_tree_height(tree->left);
-	if (right_height >= left_height)
-		return (1 + right_height);
-	return (1 + left_height);
+	tree_height(tree, 0, &pichu);
+
+	return (pichu);
 }
