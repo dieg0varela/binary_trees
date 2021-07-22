@@ -1,13 +1,18 @@
 #include "binary_trees.h"
 #include "9-binary_tree_height.c"
 #include "11-binary_tree_size.c"
-
+/**
+ * power - Entry point
+ * @value: Value to elevate
+ * @times: Exponent
+ * Return: power of the number
+ */
 int power(int value, int times)
 {
 	int res = 1;
 	int pichu = 0;
 
-	for(pichu = 0 ; pichu < times ; pichu++)
+	for (pichu = 0 ; pichu < times ; pichu++)
 		res = res * value;
 	return (res);
 }
